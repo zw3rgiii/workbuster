@@ -5,8 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-image: url("/res/arcade_sketch.png");
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+        #shooter:hover{
+            transform: scale(1.1, 1.1);
+            left: 19px;
+        }
+    </style>
 </head>
 <body>
-    
-</body>
+    <img src="/res/am_shooter.png" alt="img not loading" usemap="#shooter" id="shooter">
+
+    <map name="shooter">
+        <area shape="rect" coords="10,200 434,930" href="shooter.html" alt="link not loading">
+    </map>
+</body> 
 </html>

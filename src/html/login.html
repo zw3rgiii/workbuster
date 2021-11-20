@@ -2,47 +2,69 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Workbuster Login</title>
+
+    <!--Bootstrap CSS File-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 <body>
-    <header>
-        <div class="navbar">
-            <a href="index.html">Logo</a>
-            <span>Menü</span>
-            <span>Workbuster</span>
-            <span>Lightswitch</span>
-            <span>Profil</span>
+    <!--Navigationbar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">Logo</a>
+            <button type="menu" class="btn btn-outline-light">Menu</button>
+            <div class="collapse navbar-collapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link">Workbuster</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-item nav-link">Lightswitch</a>
+                    <a href="#" class="nav-item nav-link">Profil</a>
+                </div>
+                
+            </div>
         </div>
-    </header>
-    <div>
+    </nav>
+
+    <!--Main Content-->
+    <main class="container-fluid w-25 text-center">
     <form>
+        <!--Login Form-->
         <fieldset>
             <legend>LOGIN</legend>
-            <label for="log-username">Username</label><br>
-            <input type="text" id="log-username"><br>
-            <label for="log-password">Password</label><br>
-            <input type="password" id="log-password"><br>
+            <label for="log-username" class="visually-hidden">Username</label>
+            <input type="text" id="log-username" placeholder="Username" class="form-control"><br>
+            <label for="log-password" class="visually-hidden">Password</label>
+            <input type="password" id="log-password" placeholder="Password" class="form-control"><br>
 
-            <input type="submit" value="LOGIN">
+            <input type="checkbox" id="log-remember">
+            <label for="log-remember">Remember me</label><br>
+
+            <input type="submit" value="LOGIN" class="btn mt-3">
         </fieldset>
 
+        <!--Register Form-->
         <fieldset>
             <legend>REGISTER</legend>
-            <label for="reg-username">Username</label><br>
-            <input type="text" id="reg-username"><br>
-            <label for="reg-email">E-Mail</label><br>
-            <input type="email" id="reg-email"><br>
-            <label for="reg-password">Password</label><br>
-            <input type="password" id="reg-password"><br>
-            <label for="reg-passwordconfirm">Confirm Password</label><br>
-            <input type="password" id="reg-passwordconfirm"><br>
+            <label for="reg-username" class="visually-hidden">Username</label>
+            <input type="text" id="reg-username" placeholder="Username" class="form-control"><br>
+            <label for="reg-email" class="visually-hidden">E-Mail</label>
+            <input type="email" id="reg-email" placeholder="E-Mail" class="form-control"><br>
+            <label for="reg-password" class="visually-hidden">Password</label>
+            <input type="password" id="reg-password" placeholder="Password" class="form-control"><br>
+            <label for="reg-passwordconfirm" class="visually-hidden">Confirm Password</label>
+            <input type="password" id="reg-passwordconfirm" placeholder="Confirm Password" class="form-control"><br>
 
-            <input type="submit" value="REGISTER">
+            <input type="submit" value="REGISTER" class="btn">
         </fieldset>
     </form>
-    </div>
+    
+</main>
+
+    <!--Bootstrap Javascript File-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

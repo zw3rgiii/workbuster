@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--Bootstrap CSS File-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
         body{
             margin: 0;
@@ -18,27 +20,49 @@
             var img = document.getElementById("shooter");
             img.style.width="1960px";
             img.style.height="1120px";
-            main.style.opacity="0%";
+            img.style.zIndex="2";
+            main.style.zIndex="1";
         }
         function leaveShooter(){
             console.log("leave");
             var img = document.getElementById("shooter");
             img.style.width="1920px";
             img.style.height="1080px";
-            main.style.opacity="100%";
+            img.style.zIndex="1";
+            main.style.zIndex="2";
         }
     </script>
 </head>
 <body>
-    <img src="/res/am_shooter.png" alt="am_shooter" id="shooter" style="position: absolute">
-    <img src="/res/arcade_sketch.png" alt="img not loading" usemap="#img-maps" id="main" style="position: absolute">
-    <map name="img-maps" id="map_shooter">
-        <area href="shooter.html" onmouseenter="enterShooter()" onmouseleave="leaveShooter()" alt="map_shooter" title="map_shooter" coords="176,949,6,817,8,258,113,158,374,198,371,293,349,339,350,504,374,524,372,575,388,587,433,641,435,899" shape="poly">
-        <area href="" alt="map_jump-n-run" title="map_jump-n-run" coords="351,357,355,334,372,255,374,202,335,192,384,163,574,207,583,227,581,251,578,270,559,299,547,329,547,433,555,451,572,458,611,464,621,478,623,521,592,554,584,575,582,826,436,843,440,657,372,573,376,528,349,505" shape="poly">
-        <area href="" alt="map_beauty" title="map_beauty" coords="582,810,621,820,792,793,792,602,790,573,784,544,769,525,745,509,710,501,705,486,714,474,726,439,726,406,722,365,718,340,741,332,741,233,738,224,726,216,553,175,539,183,532,198,570,208,576,224,576,266,565,288,545,336,545,422,557,443,574,457,623,468,625,528,598,552,586,563" shape="poly">
-        <area href="" alt="map_beat-em-up" title="map_beat-em-up" coords="755,496,796,548,800,760,948,744,942,560,965,558,963,517,899,505,872,346,946,319,944,255,782,235,749,232,747,311,728,340,734,371,732,424,724,467,712,486" shape="poly">
-        <area href="" alt="map_puzzle" title="map_puzzle" coords="972,273,966,292,969,329,974,348,979,376,981,415,979,453,971,485,960,502,966,531,971,563,972,590,971,626,969,668,971,734,1032,738,1035,678,1071,670,1071,626,1052,551,1038,527,1038,478,1059,454,1072,441,1076,417,1100,412,1147,454,1167,466,1183,476,1193,476,1191,390,1172,346,1184,278" shape="poly">
-    </map>
+    <!-- Top-Header -->
+    <div class="top-header ppy-4">  
+        <img src="/res/am_shooter.png" alt="am_shooter" id="shooter" style="position: absolute">
+        <img src="/res/arcade_sketch.png" alt="img not loading" usemap="#img-maps" id="main" style="position: absolute">
+        <map name="img-maps" id="map_shooter">
+            <area href="shooter.html" onmouseenter="enterShooter()" onmouseleave="leaveShooter()" alt="map_shooter" title="map_shooter" coords="176,949,6,817,8,258,113,158,374,198,371,293,349,339,350,504,374,524,372,575,388,587,433,641,435,899" shape="poly">
+            <area href="" alt="map_jump-n-run" title="map_jump-n-run" coords="351,357,355,334,372,255,374,202,335,192,384,163,574,207,583,227,581,251,578,270,559,299,547,329,547,433,555,451,572,458,611,464,621,478,623,521,592,554,584,575,582,826,436,843,440,657,372,573,376,528,349,505" shape="poly">
+            <area href="" alt="map_beauty" title="map_beauty" coords="582,810,621,820,792,793,792,602,790,573,784,544,769,525,745,509,710,501,705,486,714,474,726,439,726,406,722,365,718,340,741,332,741,233,738,224,726,216,553,175,539,183,532,198,570,208,576,224,576,266,565,288,545,336,545,422,557,443,574,457,623,468,625,528,598,552,586,563" shape="poly">
+            <area href="" alt="map_beat-em-up" title="map_beat-em-up" coords="755,496,796,548,800,760,948,744,942,560,965,558,963,517,899,505,872,346,946,319,944,255,782,235,749,232,747,311,728,340,734,371,732,424,724,467,712,486" shape="poly">
+            <area href="" alt="map_puzzle" title="map_puzzle" coords="972,273,966,292,969,329,974,348,979,376,981,415,979,453,971,485,960,502,966,531,971,563,972,590,971,626,969,668,971,734,1032,738,1035,678,1071,670,1071,626,1052,551,1038,527,1038,478,1059,454,1072,441,1076,417,1100,412,1147,454,1167,466,1183,476,1193,476,1191,390,1172,346,1184,278" shape="poly">
+        </map>
+    </div>
 
+    <!--Navigationbar-->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">Logo</a>
+            <button type="menu" class="btn btn-outline-light">Menu</button>
+            <div class="collapse navbar-collapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link">Workbuster</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-item nav-link">Lightswitch</a>
+                    <a href="#" class="nav-item nav-link">Profil</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
 </body> 
 </html>

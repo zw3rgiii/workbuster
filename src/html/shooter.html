@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/src/js/snake.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="700" height="700"></canvas>
+
+    <script>
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext('2d');
+
+        let rows = 15;
+        let cols = 15;
+        let snake = [
+            {
+                x: 15,
+                y: 5
+            }
+        ]
+        let food;
+        let cellWidth = canvas.width/cols;
+        let cellHeight = canvas.height/rows;
+        let direction = 'LEFT';
+        let hitSelf = false;
+        let hitWall = false;
+
+        placeFood();
+        setInterval(update, 300);
+        document.addEventListener('keydown', keyDown);
+        
+        render();
+        
+        function render(){
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvas.width,  canvas.height);
+
+            ctx.fillStyle = "white";
+            snake.forEach(el => add(el.x, el.y));
+
+            ctx.fillStyle = "lightgreen";
+            add(food.x, food.y);
+            requestAnimationFrame(render);
+            
+            end();
+        }
+
+        function update(){
+            moveSnake();
+            updateDir();
+
+            if(snake[0].x == food.x && snake[0].y == food.y) {
+                foodCollection();
+                placeFood();
+            }
+        }
+
+        function add(x, y){
+            ctx.fillRect(x * cellWidth, y * cellHeight, canvas.width/cols -1, canvas.height/rows -1);
+        }
+
+        function moveSnake(){
+            for (let i = snake.length - 1; i > 0; i--) {
+                const part = snake[i];
+                const lastPart = snake[i - 1];
+
+                part.x = lastPart.x;
+                part.y = lastPart.y;
+            }
+        }
+
+        function end(){
+            for(let i = 1; i < snake.length; i++) {
+                if(snake[0].x == snake[i].x && sake[0].y == snake[i].y) hitSelf = true;
+            }
+            if(snake[0].x == 0 || snake[0].y == 0 || snake[0].x == cols || snake[0].y == rows) hitWall = true;
+            if(hitWall || hitSelf) console.log("game over");
+        }
+
+        function placeFood(){
+            let foodX = Math.floor(Math.random() * rows);
+            let foodY = Math.floor(Math.random() * cols);
+            food = {
+                x: foodX,
+                y: foodY
+            }
+        }
+
+        function foodCollection(){
+            snake = [
+                {
+                    x: snake[0].x,
+                    y: snake[0].y
+                }, ...snake
+            ];
+        }
+
+        function updateDir(){
+            if (direction == 'LEFT'){
+                snake[0].x--;
+            }
+            if (direction == 'UP'){
+                snake[0].y--;
+            }
+            if (direction == 'RIGHT'){
+                snake[0].x++;
+            }
+            if (direction == 'DOWN'){
+                snake[0].y++;
+            }
+        }
+        function keyDown(e){
+            if(e.keyCode == 37){
+                direction = 'LEFT';
+            }
+            if(e.keyCode == 38){
+                direction = 'UP';
+            }
+            if(e.keyCode == 39){
+                direction = 'RIGHT';
+            }
+            if(e.keyCode == 40){
+                direction = 'DOWN';
+            }
+        }
+    </script>
+</body>
+</html>

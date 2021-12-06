@@ -29,6 +29,10 @@ body{
     display: inline-block;
 }
 
+.hamburger-wrapper{
+    padding-right: 15px;
+}
+
 nav{
     position: fixed;
     width: 100%;
@@ -40,8 +44,15 @@ nav ul{
     overflow: hidden;
     color: white;
     padding: 0;
-    text-align: center;
     margin: 0;
+}
+
+.menu{
+    text-align: center;
+}
+
+.account{
+    text-align: right;
 }
 
 nav{
@@ -49,7 +60,7 @@ nav{
 }
 
 nav.black{
-    background: rgba(0,0,0,100);
+    background: rgba(24, 24, 24, 100);
 }
 
 nav ul li{
@@ -64,4 +75,13 @@ nav ul li a{
     font-family: sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+nav ul li a:hover{
+    color: rgb(220, 220, 220);
+}
+
+nav:hover{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

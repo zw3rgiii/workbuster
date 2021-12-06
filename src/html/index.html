@@ -5,78 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/src/style/sticky.css">
+    <link rel="stylesheet" href="/src/style/nav-bar.css">
     <link rel="stylesheet" href="/src/style/index.css">
+    <link rel="stylesheet" href="/src/style/footer.css">
+    <script src="/src/js/nav-bar.js"></script>
+    <script src="/src/js/index.js"></script>
    <title>Document</title>
 </head>
 
     <script>
-        window.addEventListener('scroll', function(){
-            var nav = document.querySelector('nav');
-            nav.classList.toggle('black', window.scrollY > 0)
-        })
-
-        function enterTop1(){
-            var title = document.getElementById("top-game-title");
-            var description = document.getElementById("top-game-desc");
-
-            title.innerHTML = "GameOne";
-            description.innerHTML = "decription for GameOne"
-        }
-
-        function enterTop2(){
-            var title = document.getElementById("top-game-title");
-            var description = document.getElementById("top-game-desc");
-
-            title.innerHTML = "GameTwo";
-            description.innerHTML = "decription for GameTwo"
-        }
-
-        function enterTop3(){
-            var title = document.getElementById("top-game-title");
-            var description = document.getElementById("top-game-desc");
-
-            title.innerHTML = "GameThree";
-            description.innerHTML = "decription for GameThree"
-        }
-
-        function enterFeatured1(){
-            var title = document.getElementById("featured-game-title");
-            var description = document.getElementById("featured-game-desc");
-
-            title.innerHTML = "GameOne";
-            description.innerHTML = "decription for GameOne"
-        }
-
-        function enterFeatured2(){
-            var title = document.getElementById("featured-game-title");
-            var description = document.getElementById("featured-game-desc");
-
-            title.innerHTML = "GameTwo";
-            description.innerHTML = "decription for GameTwo"
-        }
-
-        function enterFeatured3(){
-            var title = document.getElementById("featured-game-title");
-            var description = document.getElementById("featured-game-desc");
-
-            title.innerHTML = "GameThree";
-            description.innerHTML = "decription for GameThree"
-        }
+        
     </script>
 
     <div class="wrapper">
+        <!-- nav-bar -->
         <header>
             <nav>
                 <div class="logo">
-                    <span>HAMBURGER</span>
-                    <span>LOGO</span>
+                    <span><i class="fas fa-bars hamburger-wrapper" onmouseenter="enterHamburger()" onmouseleave="leaveHamburger()"></i></span>
+                    <span><a href="index.html">WORKBUSTER (LOGO-WIP)</a></span>
                 </div>
                 <div class="menu">
                     <ul>
                         <li><a href="#news">News</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="account">
+                    <ul>
+                        <li><a href="">log-in</a></li>
+                        <li><a href="">avatar</a></li>
                     </ul>
                 </div>
             </nav>
@@ -92,72 +51,32 @@
                 <area href="" alt="map_beat-em-up" title="map_beat-em-up" coords="755,496,796,548,800,760,948,744,942,560,965,558,963,517,899,505,872,346,946,319,944,255,782,235,749,232,747,311,728,340,734,371,732,424,724,467,712,486" shape="poly">
                 <area href="" alt="map_puzzle" title="map_puzzle" coords="972,273,966,292,969,329,974,348,979,376,981,415,979,453,971,485,960,502,966,531,971,563,972,590,971,626,969,668,971,734,1032,738,1035,678,1071,670,1071,626,1052,551,1038,527,1038,478,1059,454,1072,441,1076,417,1100,412,1147,454,1167,466,1183,476,1193,476,1191,390,1172,346,1184,278" shape="poly">
             </map>
-       </div>
-        <div class="content">
-            <h2>Top-Games</h2>
-            <div class="top-games">
-                <div class="item" id="top1" onmouseenter="enterTop1()">box-1</div>
-                <div class="item" id="top2" onmouseenter="enterTop2()">box-2</div>
-                <div class="item" id="top3" onmouseenter="enterTop3()">box-3</div>
-                <div class="item">box-4</div>
-                <div class="item">box-5</div>
-                <div class="item">box-1</div>
-                <div class="item">box-2</div>
-                <div class="item">box-3</div>
-                <div class="item">box-4</div>
-                <div class="item">box-5</div>
-                <div class="item">box-1</div>
-                <div class="item">box-2</div>
-                <div class="item">box-3</div>
-                <div class="item">box-4</div>
-                <div class="item">box-5</div>
-                <div class="item">box-1</div>
-                <div class="item">box-2</div>
-                <div class="item">box-3</div>
-                <div class="item">box-4</div>
-                <div class="item">box-5</div>
-                <div class="item">box-1</div>
-                <div class="item">box-2</div>
-                <div class="item">box-3</div>
-                <div class="item">box-4</div>
-            </div>
-            <div id="top-game-text">
-                <h3 id="top-game-title"></h3>
-                <div id="top-game-desc"></div>
-            </div>
-            <h2>Featured-Games</h2>
-            <div class="featured-games">
-                <div class="item" id="feat1" onmouseenter="enterFeatured1()">box-1</div>
-                <div class="item" id="feat2" onmouseenter="enterFeatured2()">box-2</div>
-                <div class="item" id="feat3" onmouseenter="enterFeatured3()">box-3</div>
-                <div class="item">box-4</div>
-                <div class="item">box-5</div>
-                <div class="item">box-1</div>
-                <div class="item">box-2</div>
-                <div class="item">box-3</div>
-                <div class="item">box-4</div>
-                <div class="item">box-5</div>
-                <div class="item">box-1</div>
-                <div class="item">box-2</div>
-                <div class="item">box-3</div>
-                <div class="item">box-4</div>
-                <div class="item">box-5</div>
-                <div class="item">box-1</div>
-                <div class="item">box-2</div>
-                <div class="item">box-3</div>
-                <div class="item">box-4</div>
-                <div class="item">box-5</div>
-                <div class="item">box-1</div>
-                <div class="item">box-2</div>
-                <div class="item">box-3</div>
-                <div class="item">box-4</div>
-            </div>
-            <div id="featured-game-text">
-                <h3 id="featured-game-title"></h3>
-                <div id="featured-game-desc"></div>
-            </div>
         </div>
     </div>
+     <!-- content -->
+     <div class="content">
+        <h2>Top-Games</h2>
+        <div class="top-games">
+            <div class="item" id="top1" onmouseenter="enterTop1()">box-1</div>
+            <div class="item" id="top2" onmouseenter="enterTop2()">box-2</div>
+            <div class="item" id="top3" onmouseenter="enterTop3()">box-3</div>
+        </div>
+        <div id="top-game-text">
+            <h3 id="top-game-title"></h3>
+            <div id="top-game-desc"></div>
+        </div>
+        <h2>Featured-Games</h2>
+        <div class="featured-games">
+            <div class="item" id="feat1" onmouseenter="enterFeatured1()">box-1</div>
+            <div class="item" id="feat2" onmouseenter="enterFeatured2()">box-2</div>
+            <div class="item" id="feat3" onmouseenter="enterFeatured3()">box-3</div>
+        </div>
+        <div id="featured-game-text">
+            <h3 id="featured-game-title"></h3>
+            <div id="featured-game-desc"></div>
+        </div>
+    </div>
+    <!-- footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">

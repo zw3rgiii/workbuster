@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <script src="/src/js/snake.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <canvas id="canvas" width="700" height="700"></canvas>
 
@@ -19,98 +21,101 @@
             y: 0
         };
         let place = false;
-        let sand = [
-            {
-                x: 150,
-                y: 0
-            }
-        ];
+        let sand = [];
         let direction = 'NONE';
-        
+
         setInterval(update, 10);
         document.addEventListener('keydown', keyDown);
-        
+
         render();
-        
-        function render(){
+
+        function render() {
             //backdrop
             ctx.fillStyle = "black";
-            ctx.fillRect(0, 0, canvas.width,  canvas.height);
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             //marker
             renderMarker(marker.x, marker.y);
 
             //sand
             ctx.fillStyle = "yellow";
-            placeSand(sand.x, sand.y);
+            renderSand();
 
             requestAnimationFrame(render);
         }
 
-        function renderMarker(x, y){
+        function renderMarker(x, y) {
             ctx.fillStyle = "white";
             ctx.fillRect(marker.x, marker.y, 25, 25);
         }
 
-        function placeSand(){
-            ctx.fillRect(marker.x, marker.y, 25, 25);
+        function renderSand() {
+            sand.forEach(e => {
+                ctx.fillRect(e.x, e.y, 1, 1);
+            });
         }
 
-        function update(){
+        function update() {
             updateDir();
+            fallSand();
         }
 
-        function fallSand(){
-            for (let i = snake.length - 1; i > 0; i--) {
-                const part = snake[i];
-                const lastPart = snake[i - 1];
-
-                part.x = lastPart.x;
-                part.y = lastPart.y;
-            }
+        function fallSand() {
+            sand.forEach(e => {
+                if(e.y+1 < canvas.height){
+                    if(findSand(e.x, e.y+1) == null){
+                        e.y++;
+                    }
+                }
+            });
         }
 
-        function updateDir(){
-            if (direction == 'LEFT'){
+        function findSand(x, y){
+            sand.forEach(e => {
+                if(e.x == x && e.y == y) {
+                    return e;
+                }
+            });
+            return null;
+        }
+
+        function placeSand(x, y) {
+            sand = [
+                {
+                    x: x,
+                    y: y
+                }, ...sand
+            ];
+        }
+
+        function updateDir() {
+            if (direction == 'LEFT') {
                 marker.x -= 3;
                 direction = 'NONE';
             }
-            if (direction == 'RIGHT'){
+            if (direction == 'RIGHT') {
                 marker.x += 3;
                 direction = 'NONE';
             }
-            if (placeSand){
+            if (place) {
                 placeSand(marker.x, marker.y);
+                place = false;
             }
         }
-        function keyDown(e){
-            if(e.keyCode == 32){
+        function keyDown(e) {
+            if (e.keyCode == 32) {
                 place = true;
             }
-            if(e.keyCode == 37){
+            if (e.keyCode == 37) {
                 direction = 'LEFT';
             }
-            if(e.keyCode == 39){
+            if (e.keyCode == 39) {
                 direction = 'RIGHT';
             }
         }
 
-        function moveSnake(){
-            
-        }
 
-        
-
-        function foodCollection(){
-            snake = [
-                {
-                    x: snake[0].x,
-                    y: snake[0].y
-                }, ...snake
-            ];
-        }
-
-        
     </script>
 </body>
+
 </html>

@@ -46,12 +46,12 @@
             add(food.x, food.y);
             requestAnimationFrame(render);
             
-            end();
         }
 
         function update(){
             moveSnake();
             updateDir();
+            end();
 
             if(snake[0].x == food.x && snake[0].y == food.y) {
                 foodCollection();
@@ -74,10 +74,14 @@
         }
 
         function end(){
-            for(let i = 1; i < snake.length; i++) {
-                if(snake[0].x == snake[i].x && sake[0].y == snake[i].y) hitSelf = true;
-            }
-            if(snake[0].x == 0 || snake[0].y == 0 || snake[0].x == cols || snake[0].y == rows) hitWall = true;
+            var firstTime = true;
+            snake.forEach(e => {
+                var before = e;
+                if(!firstTime){
+                    if(before.x == e.x || before.y == e.y) hitSelf = true;
+                }
+            });
+            if(snake[0].x == -1 || snake[0].y == -1 || snake[0].x == cols || snake[0].y == rows) hitWall = true;
             if(hitWall || hitSelf) console.log("game over");
         }
 

@@ -2,33 +2,13 @@
     box-sizing: border-box;
 }
 
-#shooter_map:hover{
-    z-index: -4;
-}
-
-#shooter{
-    width: 1990px;
-    z-index: -3;
-}
-
-.img {
+img {
     position: relative;
     top: 0;
     left: 0;
-}
-
-#main {
-    position: relative;
-    top: 0;
-    left: 0;
-    border: 1px red solid;
-}
-
-#shooter {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    border: 1px green solid;
+    overflow: hidden;
+    width: 100%;
+    z-index: -1;
 }
 
 .content{

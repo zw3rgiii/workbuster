@@ -9,6 +9,7 @@
     <!--Bootstrap CSS File-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    
 </head>
 <body>
     <!--Navigationbar-->
@@ -24,47 +25,74 @@
                     <a href="#" class="nav-item nav-link">Lightswitch</a>
                     <a href="#" class="nav-item nav-link">Profil</a>
                 </div>
-                
             </div>
         </div>
     </nav>
 
     <!--Main Content-->
     <main class="container-fluid w-25 text-center">
-    <form>
-        <!--Login Form-->
-        <fieldset>
-            <legend>LOGIN</legend>
-            <label for="log-username" class="visually-hidden">Username</label>
-            <input type="text" id="log-username" placeholder="Username" class="form-control"><br>
-            <label for="log-password" class="visually-hidden">Password</label>
-            <input type="password" id="log-password" placeholder="Password" class="form-control"><br>
+     <ul class="nav nav-pills" id="login-tabs">
+        <li class="nav-item">
+            <a href="#login-login" class="nav-link active">LOGIN</a>
+        </li>
+        <li class="nav-item">
+            <a href="#login-register" class="nav-link">REGISTER</a>
+        </li>
+    </ul>
 
-            <input type="checkbox" id="log-remember">
-            <label for="log-remember">Remember me</label><br>
+    <div class="tab-content">
+    <!--Login Form--> 
+        <div class="tab-pane fade show active" id="login-login">
+        <form>
+            <fieldset>
+                <legend>LOGIN</legend>
+                <label for="log-username" class="visually-hidden">Username</label>
+                <input type="text" id="log-username" placeholder="Username" class="form-control"><br>
+                <label for="log-password" class="visually-hidden">Password</label>
+                <input type="password" id="log-password" placeholder="Password" class="form-control"><br>
 
-            <input type="submit" value="LOGIN" class="btn mt-3">
-        </fieldset>
+                <input type="checkbox" id="log-remember">
+                <label for="log-remember">Remember me</label><br>
 
-        <!--Register Form-->
-        <fieldset>
-            <legend>REGISTER</legend>
-            <label for="reg-username" class="visually-hidden">Username</label>
-            <input type="text" id="reg-username" placeholder="Username" class="form-control"><br>
-            <label for="reg-email" class="visually-hidden">E-Mail</label>
-            <input type="email" id="reg-email" placeholder="E-Mail" class="form-control"><br>
-            <label for="reg-password" class="visually-hidden">Password</label>
-            <input type="password" id="reg-password" placeholder="Password" class="form-control"><br>
-            <label for="reg-passwordconfirm" class="visually-hidden">Confirm Password</label>
-            <input type="password" id="reg-passwordconfirm" placeholder="Confirm Password" class="form-control"><br>
+                <input type="submit" value="LOGIN" class="btn mt-3">
+            </fieldset>
+        </form>
+        </div>
 
-            <input type="submit" value="REGISTER" class="btn">
-        </fieldset>
-    </form>
-    
-</main>
+    <!--Register Form-->
+        <div class="tab-pane fade" id="login-register">
+        <form>
+            <fieldset>
+                <legend>REGISTER</legend>
+                <label for="reg-username" class="visually-hidden">Username</label>
+                <input type="text" id="reg-username" placeholder="Username" class="form-control"><br>
+                <label for="reg-email" class="visually-hidden">E-Mail</label>
+                <input type="email" id="reg-email" placeholder="E-Mail" class="form-control"><br>
+                <label for="reg-password" class="visually-hidden">Password</label>
+                <input type="password" id="reg-password" placeholder="Password" class="form-control"><br>
+                <label for="reg-passwordconfirm" class="visually-hidden">Confirm Password</label>
+                <input type="password" id="reg-passwordconfirm" placeholder="Confirm Password" class="form-control"><br>
+
+                <input type="submit" value="REGISTER" class="btn">
+            </fieldset>
+        </form>
+        </div>
+    </div>
+
+    </main>
 
     <!--Bootstrap Javascript File-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#login-tabs a").click(function(e){
+                e.preventDefault();
+                $(this).tab("show");
+            })
+        })
+    </script>
+
 </body>
 </html>

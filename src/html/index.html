@@ -12,38 +12,44 @@
     <script src="/src/js/index.js"></script>
    <title>Document</title>
 </head>
-
-    <script>
-        
-    </script>
-
+<body>
+  
     <div class="wrapper">
         <!-- nav-bar -->
         <header>
             <nav>
-                <div class="logo">
-                    <span><i class="fas fa-bars hamburger-wrapper" onmouseenter="enterHamburger()" onmouseleave="leaveHamburger()"></i></span>
+                <div class="logo nav-hamburger-closed">
+                    <span><i class="fas fa-bars hamburger-wrapper" onclick="enterHamburger()"></i></span>
                     <span><a href="index.html">WORKBUSTER (LOGO-WIP)</a></span>
                 </div>
-                <div class="menu">
-                    <ul>
-                        <li><a href="#news">News</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#about">About</a></li>
-                    </ul>
-                </div>
-                <div class="account">
-                    <ul>
+                <div>
+                    
+                    <ul class="account">
                         <li><a href="">log-in</a></li>
                         <li><a href="">avatar</a></li>
                     </ul>
                 </div>
             </nav>
+            <div class="hamburger-menu menu-hamburger-closed">
+                <div class="menu-header">Navigation</div>
+                <div class="menu-items-wrapper">
+                    <div class="menu-item" id="news-burger-item">
+                        <a href="#news">News</a>
+                    </div>
+                    <div class="menu-item" id="contact-burger-item">
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="menu-item" id="about-burger-item">
+                        <a href="#about">About</a>
+                    </div>
+                    
+                </div>
+            </div>
         </header>
         <!-- IMG -->
         <div class="img">  
             <img src="/res/arcade_sketch.png" alt="img not loading" usemap="#img-maps" id="main">
-            <img src="/res/am_shooter.png" alt="am_shooter" id="shooter" style="position: absolute;">
+            <!--<img src="/res/am_shooter.png" alt="am_shooter" id="shooter" style="position: absolute;">-->
             <map name="img-maps" id="map_shooter">
                 <area href="shooter.html" id="shooter_map" onmouseenter="enterShooter()" onmouseleave="leaveShooter()" alt="map_shooter" title="map_shooter" coords="176,949,6,817,8,258,113,158,374,198,371,293,349,339,350,504,374,524,372,575,388,587,433,641,435,899" shape="poly">
                 <area href="" alt="map_jump-n-run" title="map_jump-n-run" coords="351,357,355,334,372,255,374,202,335,192,384,163,574,207,583,227,581,251,578,270,559,299,547,329,547,433,555,451,572,458,611,464,621,478,623,521,592,554,584,575,582,826,436,843,440,657,372,573,376,528,349,505" shape="poly">
@@ -121,6 +127,18 @@
             </div>
         </div>
     </footer>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/src/js/jquery.rwdImageMaps.min.js"></script>
+    <script>
+        $(document).ready(function(e) {
+            $('img[usemap]').rwdImageMaps();
+        
+            $('area').on('click', function() {
+                alert($(this).attr('alt') + ' clicked');
+            });
+        });
+    </script>
 </body>
 </html>
     

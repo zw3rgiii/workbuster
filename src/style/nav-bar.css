@@ -37,6 +37,7 @@ nav{
     position: fixed;
     width: 100%;
     transition: 1.5s;
+    z-index: 10;
 }
 
 nav ul{
@@ -133,6 +134,7 @@ nav ul li a:hover{
     left: -25%;
     width: 25%;
     height: 100%;
+    z-index: 10;
 }
 
 .menu-item {

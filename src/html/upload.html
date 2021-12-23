@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>^
+    <!-- Der Kodierungstyp enctype MUSS wie dargestellt angegeben werden -->
+    <form enctype="multipart/form-data" action="__URL__" method="POST">
+        <!-- MAX_FILE_SIZE muss vor dem Datei-Eingabefeld stehen -->
+        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+        <!-- Der Name des Eingabefelds bestimmt den Namen im $_FILES-Array -->
+        Diese Datei hochladen: <input name="userfile" type="file" />
+        <input type="submit" value="Send File" />
+    </form>
+</body>
+</html>

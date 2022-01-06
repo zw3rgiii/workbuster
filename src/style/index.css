@@ -1,5 +1,9 @@
-*{
+* {
     box-sizing: border-box;
+}
+
+body {
+    background-color: red;
 }
 
 img {
@@ -10,7 +14,7 @@ img {
     width: 100%;
 }
 
-.content{
+.content {
     padding-left: 20px;
 }
 
@@ -37,6 +41,6 @@ img {
     background-color: #ddd;
 }
 
-h2{
+h2 {
     margin-top: 40px;
 }

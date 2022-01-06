@@ -1,22 +1,15 @@
-html, body{
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
 }
 
-body{
+body {
     font-family: sans-serif;
 }
 
-.content{
-    width: 100%;
-    margin: 4em auto;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: justify;
-}
-
-.logo{
+.logo {
     position: fixed;
     float: left;
     margin: 16px 36px;
@@ -25,22 +18,22 @@ body{
     font-size: 24px;
 }
 
-.logo span{    
+.logo span {
     display: inline-block;
 }
 
-.hamburger-wrapper{
+.hamburger-wrapper {
     padding-right: 15px;
 }
 
-nav{
+nav {
     position: fixed;
     width: 100%;
     transition: 1.5s;
     z-index: 10;
 }
 
-nav ul{
+nav ul {
     list-style: none;
     background: rgba(0, 0, 0, 0);
     overflow: hidden;
@@ -49,25 +42,24 @@ nav ul{
     margin: 0;
 }
 
-.menu{
+.menu {
     text-align: center;
 }
 
-.account{
+.account {
     text-align: right;
-    
 }
 
-nav.black{
+nav.black {
     background: rgba(24, 24, 24, 100);
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     padding: 20px;
 }
 
-nav ul li a{
+nav ul li a {
     text-decoration: none;
     color: rgb(99, 99, 99);
     font-size: 18px;
@@ -76,7 +68,7 @@ nav ul li a{
     letter-spacing: 2px;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     color: rgb(220, 220, 220);
 }
 
@@ -88,8 +80,12 @@ nav ul li a:hover{
 }
 
 @keyframes hamburger {
-    from {left: 0;}
-    to {left: 25%;}
+    from {
+        left: 0;
+    }
+    to {
+        left: 25%;
+    }
 }
 
 .menu-hamburger-opened {
@@ -100,8 +96,12 @@ nav ul li a:hover{
 }
 
 @keyframes hamburgerItems {
-    from {left: -25%;}
-    to {left: 0;}
+    from {
+        left: -25%;
+    }
+    to {
+        left: 0;
+    }
 }
 
 .nav-hamburger-closed {
@@ -112,8 +112,12 @@ nav ul li a:hover{
 }
 
 @keyframes hamburger-c {
-    from {left: 25%;}
-    to {left: 0%;}
+    from {
+        left: 25%;
+    }
+    to {
+        left: 0%;
+    }
 }
 
 .menu-hamburger-closed {
@@ -124,8 +128,12 @@ nav ul li a:hover{
 }
 
 @keyframes hamburgerItems-c {
-    from {left: 0%;}
-    to {left: -25%;}
+    from {
+        left: 0%;
+    }
+    to {
+        left: -25%;
+    }
 }
 
 .hamburger-menu {
@@ -163,5 +171,5 @@ nav ul li a:hover{
 }
 
 .menu-items-wrapper a:hover {
-    color:rgb(220, 220, 220);
+    color: rgb(220, 220, 220);
 }

@@ -6,14 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>^
+<body>
     <!-- Der Kodierungstyp enctype MUSS wie dargestellt angegeben werden -->
-    <form enctype="multipart/form-data" action="__URL__" method="POST">
-        <!-- MAX_FILE_SIZE muss vor dem Datei-Eingabefeld stehen -->
-        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+    <form enctype="multipart/form-data" action="../php/uploadOneFile.php" method="post">
         <!-- Der Name des Eingabefelds bestimmt den Namen im $_FILES-Array -->
-        Diese Datei hochladen: <input name="userfile" type="file" />
-        <input type="submit" value="Send File" />
+        Diese Datei hochladen: <input name="userfile" type="file" id="userfile"/>
+        <input type="submit" value="Send File" name="submit"/>
     </form>
 </body>
 </html>

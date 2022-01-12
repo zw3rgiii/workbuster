@@ -1,0 +1,46 @@
+#game-desc-ta {
+    resize: none;
+    border: 1px solid #009879;
+    border-radius: 5px;
+}
+
+.file-upload__input {
+    display: none;
+}
+
+.file-upload__button {
+    -webkit-appearance: none;
+    background: #009879;
+    border: 2px solid #00745D;
+    border-radius: 4px;
+    outline: none;
+    margin-right: 15px;
+    padding: .5em .8em;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.file-upload__button:hover {
+    background: #00745D;
+}
+
+.file-upload__label {
+    max-width: 255px;
+}
+
+.submit {
+    -webkit-appearance: none;
+    background: #009879;
+    border: 2px solid #00745D;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 2em;
+    margin-right: 15px;
+    padding: .5em .8em;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background: #00745D;
+}

@@ -1,3 +1,20 @@
+.game-uplaod-form {
+    display: inline-block;
+    padding: .6em .6em;
+    border-radius: 4px;
+    background-color: #DEDEDE;
+    max-width: 280px;
+}
+
+#game-title-tf {
+    width: 100%;
+    max-width: 270px;
+    min-width: 270px;
+    resize: none;
+    border: 1px solid #009879;
+    border-radius: 5px;
+}
+
 #game-desc-ta {
     resize: none;
     border: 1px solid #009879;

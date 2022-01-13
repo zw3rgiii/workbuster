@@ -18,7 +18,22 @@ Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), 
             return file.name;
         });
         console.log(filenameList);
-        label.innerText = filenameList.join('\n') || defaultLabelText;
+        label.innerText = '\n' + filenameList.join('\n') || defaultLabelText;
         label.title = label.textContent;
     });
+});
+
+
+Array.prototype.forEach.call(document.querySelectorAll('.submit'), function(button) {
+    const hiddenInput = button.parentElement.querySelector('.file-upload__input');
+
+    button.addEventListener('click', function() {
+        //DOEN'T WORK
+        const gameTitle = button.parentElement.querySelector('#game-title-tf').textContent;
+        const gameDesc = button.parentElement.querySelector('#game-desc-ta').textContent;
+
+        console.log('Title: ' + gameTitle + '\n' + 'Desc: ' + gameDesc);
+
+        const itemsList = hiddenInput.files;
+    })
 });

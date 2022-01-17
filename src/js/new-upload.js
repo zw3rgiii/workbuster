@@ -22,7 +22,7 @@ Array.prototype.forEach.call(document.querySelectorAll('.file-upload__button'), 
         label.title = label.textContent;
     });
 });
-
+/*
 
 Array.prototype.forEach.call(document.querySelectorAll('.submit'), function(button) {
     const hiddenInput = button.parentElement.querySelector('.file-upload__input');
@@ -31,9 +31,33 @@ Array.prototype.forEach.call(document.querySelectorAll('.submit'), function(butt
         //DOEN'T WORK
         const gameTitle = button.parentElement.querySelector('#game-title-tf').textContent;
         const gameDesc = button.parentElement.querySelector('#game-desc-ta').textContent;
-
+        dateiupload(evt);
         console.log('Title: ' + gameTitle + '\n' + 'Desc: ' + gameDesc);
-
-        const itemsList = hiddenInput.files;
+        
+        
     })
+    
+});*/
+
+const url = '../php/new-upload.php';
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const files = document.querySelector('[type=file]').files;
+  const formData = new FormData();
+
+  for (let i = 0; i < files.length; i++) {
+    let file = files[i];
+
+    formData.append('files[]', file);
+  }
+
+  fetch(url, {
+    method: 'POST',
+    body: formData,
+  }).then((response) => {
+    console.log(response);
+  })
 });

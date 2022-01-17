@@ -16,7 +16,7 @@
     <!-- header -->
 
     <!-- content -->
-    <div class="game-uplaod-form">
+    <form action="../php/new-upload.php" class="game-upload-form" method="post" enctype="multipart/form-data">
         <div class="game-title">
             <label for="game-title-tf">Type the title of your game here:</label><br>
             <input type="text" name="gme-title-tf" id="game-title-tf">
@@ -26,12 +26,12 @@
             <textarea name="game-desc-ta" id="game-desc-ta" cols="35" rows="10"></textarea>
         </div>
         <div class="upload-container">
-            <input class="file-upload__input" type="file" name="my-file[]" id="my-file" multiple>
+            <input class="file-upload__input" type="file" name="my-file" id="my-file" multiple>
             <button class="file-upload__button" type="button" id="uploadbutton">CHOOSE FILE(S)</button>
             <span class="file-upload__label" id="upload-text"></span>
         </div>
-        <button class="submit" type="button" id="submitbutton">OK</button>
-    </div>
+        <input class="submit" type="submit" id="submitbutton" value="OK">
+    </form>
 
     <!-- footer -->
 

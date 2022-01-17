@@ -16,6 +16,9 @@
 }
 
 #game-desc-ta {
+    width: 100%;
+    max-width: 270px;
+    min-width: 270px;
     resize: none;
     border: 1px solid #009879;
     border-radius: 5px;
@@ -31,6 +34,7 @@
     border: 2px solid #00745D;
     border-radius: 4px;
     outline: none;
+    margin-top: 2em;
     margin-right: 15px;
     padding: .5em .8em;
     color: #FFF;
@@ -43,6 +47,7 @@
 
 .file-upload__label {
     max-width: 255px;
+    margin-top: 2em;
 }
 
 .submit {

@@ -40,9 +40,10 @@ Array.prototype.forEach.call(document.querySelectorAll('.submit'), function(butt
 });*/
 
 const url = '../php/new-upload.php';
-const form = document.querySelector('form');
+const gameFilesDiv = document.querySelector('#game-files');
+const thumbnailFilesDiv = document.querySelector('#thumbnail-files');
 
-form.addEventListener('submit', (e) => {
+gameFilesDiv.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const files = document.querySelector('[type=file]').files;
@@ -61,3 +62,23 @@ form.addEventListener('submit', (e) => {
     console.log(response);
   })
 });
+
+thumbnailFilesDiv.addEventListener('submit', (e) => {
+    e.preventDefault();
+  
+    const files = document.querySelector('[type=file]').files;
+    const formData = new FormData();
+  
+    for (let i = 0; i < files.length; i++) {
+      let file = files[i];
+  
+      formData.append('thumbnails[]', file);
+    }
+  
+    fetch(url, {
+      method: 'POST',
+      body: formData,
+    }).then((response) => {
+      console.log(response);
+    })
+  });
